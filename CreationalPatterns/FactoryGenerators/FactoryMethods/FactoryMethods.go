@@ -17,8 +17,6 @@ type AnimalFactory struct {
 	houseName string
 }
 
-// NewAnimal is an `Animal` factory that fixes
-// the species as the value of its `AnimalFactory` instance
 func (af AnimalFactory) NewAnimal(age int) Animal {
 	return Animal{
 		species: af.species,
@@ -26,8 +24,6 @@ func (af AnimalFactory) NewAnimal(age int) Animal {
 	}
 }
 
-// NewHouse is an `AnimalHouse` factory that fixes
-// the name as the value of its `AnimalFactory` instance
 func (af AnimalFactory) NewHouse(sizeInMeters int) AnimalHouse {
 	return AnimalHouse{
 		name:         af.houseName,
@@ -35,9 +31,9 @@ func (af AnimalFactory) NewHouse(sizeInMeters int) AnimalHouse {
 	}
 }
 
-func main()  {
+func main() {
 	dogFactory := AnimalFactory{
-		species: "dog",
+		species:   "dog",
 		houseName: "kennel",
 	}
 	dog := dogFactory.NewAnimal(2)
@@ -46,7 +42,7 @@ func main()  {
 	fmt.Println(kennel.sizeInMeters)
 
 	horseFactory := AnimalFactory{
-		species: "horse",
+		species:   "horse",
 		houseName: "stable",
 	}
 	horse := horseFactory.NewAnimal(12)
